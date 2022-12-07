@@ -44,6 +44,7 @@ char	*get_next_line(int fd)
 		// printf("%zu\n", len);
 		len--;
 	}
+	
 	if (bytes < 0)
 		return (free(p), "bytes < 0");
 	else if (bytes == 0)

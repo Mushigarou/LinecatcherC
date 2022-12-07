@@ -56,6 +56,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (p);
 }
 
+
 // int main()
 // {
 // 	printf("1 : %s\n", (ft_memchr("hello this is a test GG", '\n', 120)));
