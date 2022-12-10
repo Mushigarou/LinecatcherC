@@ -1,3 +1,11 @@
+
+/***
+ * if read() reads NULL it doesn't return what is left
+ * 
+ * 
+ * 
+*/
+
 #include "get_next_line.h"
 
 // int	get_nextline_utils(int	fd, int in, char *s)
@@ -23,14 +31,41 @@ size_t	ft_strlen(char	*s)
 	return (i);
 }
 
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+	size_t	tmp;
+
+	tmp = size;
+	ptr = malloc(count * size);
+	if (ptr == 0)
+		return (NULL);
+	ft_bzero(ptr, size * count);
+	return (ptr);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	while (n-- > 0)
+		*(char *)s++ = 0;
+}
+
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (!dst || !src)
-		return (NULL);
-	while (n--)
-		*(char *)dst++ = *(char *)src++;
-	return (dst);
+	char	*d;
+	char	*s;
+	size_t	i;
+
+	d = (char *)dst;
+	s = (char *)src;
+	if (dst == src)
+		return (dst);
+	i = -1;
+	while (++i < n)
+		d[i] = s[i];
+	return ((void *)(dst));
 }
+
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
