@@ -7,7 +7,7 @@
 #include "get_next_line.h"
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 100000
 #endif // BUFFER_SIZE
 
 /*removing the line that was returned for the static var*/

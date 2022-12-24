@@ -56,17 +56,17 @@ char	*ft_strdup(const char *s1)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*str;
+	char	*new_str;
 	size_t	len;
 
 	if (!s1)
 		return (ft_strdup(s2));
 	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc(len + 1);
-	if (!str)
+	new_str = (char *)malloc(len + 1);
+	if (!new_str)
 		return (NULL);
-	str = ft_strcat(s1, s2, str, len);
-	return (str);
+	new_str = ft_strcat(s1, s2, new_str, len);
+	return (new_str);
 }
 
 char	*ft_strcat(char *s1, char *s2, char *str, size_t len)
