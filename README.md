@@ -1,6 +1,6 @@
-# Get Next Line
+# LinecatcherC
 
-get_next_line function developed using only one static variable allows you to read a file (not binary), one line at a time. The function returns the line that was read, or NULL if there is nothing else to read or if an error occurred.
+`get_next_line()` uses a single static variable and lets you to read a file (not binary), one line at a time. The function returns the line that was read, or NULL if there is nothing else to read or if an error occurred.
 
 ```c
 char	*get_next_line(int fd);
@@ -16,11 +16,8 @@ char	*get_next_line(int fd);
 ```
 You can choose the default value for the buffer size by not giving the `-D` flag.
 
-## Static Variable
-
-
 ## Multiple File Descriptors
-The get_next_line (Bonus) function can handle multiple file descriptors simultaneously. This means you can read from different file descriptors in separate calls without losing the reading thread of each file descriptor or returning a line from another file descriptor.
+The `_bonus` version of the function can handle multiple file descriptors simultaneously. This means you can read from different file descriptors in separate calls without losing the reading thread of each file descriptor or returning a line from another file descriptor.
 
 ```c
  	while (1)
